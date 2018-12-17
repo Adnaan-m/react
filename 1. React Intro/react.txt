@@ -1,0 +1,48 @@
+React:
+'React' is a open source JavaScript library that is used for building dynamic user interfaces. It is the 'View' in Model View Controller. It's maintained by Facebook, Instagram and a community of individual developers. Crucially, it runs in the browser - which means the pages load faster.
+
+Advantages of React over vanilla JavaScript:
+- Allows design of simple declarative views for each state (like the index or show page) of your application.
+- Encapsulated components - every part of your website can be split up into separate files. Each part is essentially a customised HTML element. This is good because it means you do not have to reuse code, you can simply reuse the same component, which keeps your code DRY.
+- Dynamic properties and state.
+- Virtual DOM: Abstracts away the DOM and creates its own version which is simplified and only includes the things that you need. Also helps us identify which parts have changed, determines how to upload the browsers DOM more efficiently and is much more lightweight/works faster.
+- Independent from the rest of your application.
+- Can render on the client or server.
+- The UI 'state' can become difficult to handle using vanilla JavaScript as it gets more dynamic.
+
+JXS:
+A preprocessor step that adds XML syntax to JavaScript - just a JavaScript extension. Looks like XML/HTML. This is how your JavaScript is written within React (that's why some bits look slightly different to vanilla JavaScript).
+- Defines a familiar syntax for defining tree structures with attributes.
+- Is not required, but makes things with React MUCH easier.
+
+To create a react app:
+In the desired folder, in the command line type the following 4 steps:
+- 'npm install -g create-react-app'
+- 'create-react-app hello-world'
+- 'cd hello-world'
+- 'npm start'
+This will start the app in the browser and create everything you need, including Babel.
+
+After this is done, you can begin to tinker with the page and make it your own! In the src/App.js file, delete the import of the logo at the top of the file (second line) and clear out as much content as you like between the div opening and closing tags after 'return'. This is where you will put all your code that links to the components. You will also put the data for the website in here, in 'constructor' and 'componentWillMount' functions.
+
+Now, create a 'Components' folder inside src and create a file inside Components called something like 'Projects.js'. This is the file that will link to App.js and will cycle through the data in order to separate it out for styling and displaying within a 'ProjectItem.js' components file.
+
+Now, paste in all the code into this Projects.js file from the App.js file you previously altered. At the bottom, change 'App' to 'Projects', because you want to be exporting the code in your 'Projects' file! Also change the className to 'Projects' and the class (the one that you render) to 'Projects', for completeness.
+
+Now, go back into the App.js file and add in, on the second line:
+```
+import Projects from './Components/Projects';
+```
+This will provide the other half of the link to the Projects file! Inside 'Projects.js' you export it, and inside 'App.js' you import it!
+
+Also, within the 'return' div of App.js, add '<Projects />'. This will link your Projects.js file code into your React webpage!
+
+Now you have to make something to actually style the data. You need to pass in this code to Projects.js (Projects.js is just a holder for the code, the data is not actually created in this file). So, inside the Components folder, create a new file titled 'ProjectItem.js' - this is where you will create all the display-related code you want to be passed in to Projects.js and then passed in to App.js and then finally displayed on the page!
+
+Copy all the code into ProjectItem.js from Project.js, and now change the 'export' bit at the bottom to 'ProjectItem', because you want to export the code in this file! But, in order to completely link ProjectItem.js to Projects.js, we need to import it within Projects.js (just like we did before in App.js). So, go in to Projects.js and on the second line add the following:
+```
+import ProjectItem from './ProjectItem';
+```
+This will provide the link from ProjectItem.js to Projects.js! We now successfully have linked everything. You can now add code to the three files in order to display stuff! Take a look at the examples that I have done in order to see how. You can also add more Components, such as an AddProject.js file (to add new data to the webpage) and link them just like we did before.
+
+NOTE: Commenting is really weird in React too. In order to properly comment, you have to enclose your comments with '{/* blah blah blah */}' - a real pain...

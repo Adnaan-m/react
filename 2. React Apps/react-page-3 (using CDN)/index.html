@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React App Using CDN</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <!-- All our React code just goes into this div. Think of it as like the 'master' div: -->
+  <div id="app">Loading...</div>
+
+  <!-- This imports React using a CDN: -->
+  <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <!-- This gets Babel for us: -->
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <!-- And this is just the link to our app.js file: -->
+  <script type="text/babel" src="app.js"></script>
+
+</body>
+</html>
